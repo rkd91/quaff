@@ -285,7 +285,7 @@ class Call
   alias_method :new_transaction, :update_branch
 
   def get_new_via_hdr
-    "SIP/2.0/#{@cxn.transport} #{Quaff::Utils.local_ip}:#{@cxn.local_port};rport;branch=#{Quaff::Utils::new_branch}"
+    "SIP/2.0/#{@cxn.transport} #{@cxn.local_hostname}:#{@cxn.local_port};rport;branch=#{Quaff::Utils::new_branch}"
   end
 
   def recv_something
